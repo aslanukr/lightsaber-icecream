@@ -1,0 +1,243 @@
+// Product cards
+
+section.products {
+  text-align: center;
+
+  .section-heading {
+    margin-bottom: 148px;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 200px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 303px;
+    }
+  }
+}
+
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    row-gap: 168px;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: $tablet) {
+    gap: 16px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    gap: 29px;
+  }
+}
+
+.product-card {
+  position: relative;
+
+  border-radius: $border-radius-card;
+  color: $text-dark;
+
+  // As a container
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // As a flex
+  flex-shrink: 1;
+
+  flex-basis: 280px;
+  max-width: 280px;
+
+  @include transition(all);
+  transition-duration: 500ms;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  &:hover:before,
+  &:focus:before,
+  &:hover:after,
+  &:focus:after {
+    transform: scale(1.1) translateY(-100%);
+    // transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale(1);
+    //
+  }
+
+  padding: 123px 40px 16px;
+
+  @media screen and (min-width: $tablet) {
+    // arguments: items-per-row, spacing
+    // @include flex-basis(3, 16);
+    flex-basis: 224px;
+    max-width: 224px;
+
+    padding: 108px 26px 12px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    // arguments: items-per-row, spacing
+    // @include flex-basis(3, 29);
+    flex-basis: 370px;
+    max-width: 370px;
+
+    padding: 165px 64px 60px;
+  }
+
+  &:before {
+    content: '';
+    width: 200px;
+    height: 200px;
+
+    @media screen and (min-width: $desktop) {
+      width: 302px;
+      height: 302px;
+    }
+
+    position: absolute;
+    transform: translateY(-110%);
+    @include transition-multiple(transform, box-shadow);
+    transition-duration: 500ms;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  &:after {
+    content: '';
+    width: 200px;
+    height: 200px;
+
+    @media screen and (min-width: $desktop) {
+      width: 302px;
+      height: 302px;
+    }
+
+    position: absolute;
+    transform: translateY(-110%);
+    @include transition-multiple(transform, box-shadow);
+    transition-duration: 500ms;
+
+    margin-top: -16px;
+
+    @media screen and (min-width: $tablet) {
+      margin-top: -12px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-top: -11px;
+    }
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background-position: center;
+    background-size: cover;
+  }
+
+  &:nth-of-type(1) {
+    background-color: $bg-primary-lighter;
+
+    &:before {
+      background: linear-gradient(
+          0deg,
+          rgba($bg-primary-lighter, 0.7),
+          rgba($bg-primary-lighter, 0.7)
+        ),
+        #d9d9d9;
+      box-shadow: 0px 8px 30px rgba(10, 136, 23, 0.25);
+    }
+
+    &::after {
+      @include product-card-bg(products, image1, webp);
+    }
+  }
+
+  &:nth-of-type(2) {
+    background-color: $bg-secondary;
+
+    &:before {
+      background: linear-gradient(
+          0deg,
+          rgba($bg-secondary, 0.7),
+          rgba($bg-secondary, 0.7)
+        ),
+        #d9d9d9;
+    }
+    &::after {
+      @include product-card-bg(products, image2, webp);
+    }
+  }
+
+  &:nth-of-type(3) {
+    background-color: $bg-tertiary;
+
+    &:before {
+      background: linear-gradient(
+          0deg,
+          rgba($bg-tertiary, 0.7),
+          rgba($bg-tertiary, 0.7)
+        ),
+        #d9d9d9;
+    }
+
+    &::after {
+      @include product-card-bg(products, image3, webp);
+    }
+  }
+}
+
+.product-card__heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  @include fz-lh(20, 24);
+
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $tablet) {
+    @include fz-lh(22, 27);
+  }
+
+  @media screen and (min-width: $desktop) {
+    @include fz-lh(30, 37);
+    margin-bottom: 66px;
+  }
+}
+
+.product-card__text {
+  line-height: 176%; // 28px
+  text-align: center;
+
+  margin-bottom: 101px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: rem(14);
+    margin-bottom: 75px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: rem(16);
+    margin-bottom: 50px;
+  }
+}
+
+.product-card__link {
+  margin-top: auto;
+  align-self: center;
+
+  // Make the entire card clickable to a link it contains - solution courtesy of Vadim Makeyev
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

@@ -1,0 +1,127 @@
+<header class="header" data-header>
+	<div class="container header__container">
+
+		<!-- Logo -->
+		<a class="logo-link" href="./index.html" aria-label="icecream logo">
+
+			<svg class="logo__img" width="60" height="65">
+				<use href="./images/symbol-defs.svg#icon-logo"></use>
+			</svg>
+
+		</a>
+
+		<!-- Header navigation -->
+		<nav class="nav">
+			<ul class="nav__list list">
+
+				<!-- Nav item 1 - Home -->
+				<li class="nav__item">
+					<a class="nav__link link" href="#hero">Home</a>
+				</li>
+
+				<!-- Nav item 2 - How it's made -->
+				<li class="nav__item">
+					<a class="nav__link link" href="#about">How it's made? </a>
+				</li>
+
+				<!-- Nav item 3 - Our products -->
+				<li class="nav__item">
+					<a class="nav__link link" href="#products">Our products</a>
+				</li>
+
+				<!-- Nav item 4 - Contacts -->
+				<li class="nav__item">
+					<a class="nav__link link" href="#contacts">Contacts</a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Burger button & header button wrapper -->
+		<div class="header__group">
+
+			<!-- Mobile menu open button (burger) -->
+			<button class="burger-button menu-button menu-toggle js-open-menu" aria-expanded="false"
+				aria-label="Button to open mobile menu" aria-controls="mobile-menu">
+
+				<svg width="32" height="32">
+					<use href="./images/symbol-defs.svg#icon-menu-open"></use>
+				</svg>
+
+			</button>
+
+			<!-- Header button (Buy Now) -->
+			<button class="header__btn header__btn--main js-open-modal" data-modal="modal-buynow" type="button"
+				data-modal-open>
+				Buy now
+
+				<svg class="chevron" width="12" height="12">
+					<use href="./images/symbol-defs.svg#icon-arrow-btn"></use>
+				</svg>
+
+			</button>
+		</div>
+	</div>
+</header>
+
+<!-- Mobile menu -->
+<div class="menu-container js-menu-container" role="dialog" id="mobile-menu">
+
+	<!-- Mobile menu logo -->
+	<a class="logo-link logo-link--mobile" href="./index.html" aria-label="icecream logo">
+		<svg class="logo__img" width="40" height="40">
+			<use href="./images/symbol-defs.svg#icon-logo"></use>
+		</svg>
+	</a>
+
+	<!-- Mobile menu close button -->
+	<button class="menu-toggle menu-button mobile-menu__close-button js-close-menu"
+		aria-label="Button to close mobile menu" aria-controls="mobile-menu">
+
+		<svg width="20" height="20">
+			<use href="./images/symbol-defs.svg#icon-menu-close"></use>
+		</svg>
+	</button>
+
+	<!-- Mobile menu wrapper -->
+	<div class="mobile-menu__wrapper">
+
+		<!-- Mobile menu nav -->
+		<ul class="mobile-menu">
+
+			<li class="mobile-menu__item">
+				<a class="mobile-menu__link js-close" href="#hero">Home</a>
+			</li>
+
+			<li class="mobile-menu__item">
+				<a class="mobile-menu__link js-close" href="#about">How it's made?</a>
+			</li>
+
+			<li class="mobile-menu__item">
+				<a class="mobile-menu__link js-close" href="#products">Our products </a>
+			</li>
+
+			<li class="mobile-menu__item">
+				<a class="mobile-menu__link js-close" href="#contacts">Contact </a>
+			</li>
+
+		</ul>
+
+		<!-- Mobile menu button (Buy Now) -->
+		<button class="header__btn header__btn--mobile js-open-modal js-close" data-modal="modal-buynow" type="button"
+			data-modal-open>
+			Buy now
+
+			<svg class="chevron" width="12" height="12">
+				<use href="./images/symbol-defs.svg#icon-arrow-btn"></use>
+			</svg>
+
+		</button>
+
+	</div>
+
+</div>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+	integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+	crossorigin="anonymous"></script>
+<!-- End of Header -->

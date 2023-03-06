@@ -1,0 +1,81 @@
+// Our-location modal window
+
+.modal--our-location {
+  max-height: 365px;
+  min-width: 280px;
+  padding: 26px;
+
+  @media screen and (min-width: $tablet) {
+    max-height: 458px;
+    min-width: 568px;
+    padding: 30px 58px;
+  }
+}
+
+.modal-location__title {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  font-family: $secondary-font;
+  @include fz-lh(16, 24);
+
+  color: $text-dark;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 32px;
+
+    @include fz-lh(20, 28);
+  }
+}
+
+.modal-location__map {
+  display: block;
+  border: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 224px;
+  height: 199px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    min-width: 448px;
+    height: 260px;
+    margin-bottom: 32px;
+  }
+}
+
+.modal-location__button {
+  min-width: 134px;
+  min-height: 42px;
+  padding: 12px 34px;
+
+  @include fz-lh(12, 15);
+
+  border: none;
+  background-color: $accent;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: $contrast;
+  }
+
+  &:focus {
+    background-color: $contrast;
+    color: $text-light;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-width: 145px;
+    @include fz-lh(14, 17);
+  }
+}

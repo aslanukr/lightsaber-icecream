@@ -1,0 +1,55 @@
+.modal-video {
+  width: 280px;
+  height: auto;
+  padding: 28px 28px;
+
+  @media screen and (min-width: $tablet) {
+    width: 568px;
+    padding: 32px 60px;
+  }
+}
+
+.video__title {
+  font-family: 'Seymour One';
+  @include fz-lh(16, 24);
+
+  color: $text-dark;
+
+  margin-bottom: 20px;
+
+  @media screen and (min-width: $tablet) {
+    @include fz-lh(20, 28);
+
+    margin-bottom: 32px;
+  }
+}
+
+.video__text {
+  font-family: $primary-font;
+  @include fz-lh(14, 20);
+
+  color: $text-dark;
+
+  text-align: left;
+
+  margin-top: 20px;
+
+  @media screen and (min-width: $tablet) {
+    @include fz-lh(16, 22);
+
+    margin-top: 32px;
+
+    text-align: justify;
+  }
+}
+
+.video__content {
+  width: 224px;
+  height: auto;
+  border: 0px;
+
+  @media screen and (min-width: $tablet) {
+    width: 448px;
+    height: 205px;
+  }
+}

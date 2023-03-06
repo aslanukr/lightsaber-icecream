@@ -1,0 +1,68 @@
+.header {
+  background-color: $bg-primary-darker;
+  display: flex;
+  align-items: baseline;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  z-index: $z-header;
+
+  width: 100%;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: calc($mobile - 1px)) {
+    width: 100%;
+  }
+}
+
+.logo__img {
+  fill: $accent;
+}
+
+.header__group {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header__btn {
+  @extend .button--accented;
+  @extend %flex-centered;
+
+  &.header__btn--main {
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+}
+
+// Navigation menu
+
+.nav {
+  margin-left: auto;
+}
+.nav__list {
+  display: none;
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.nav__item {
+  &:not(:last-child) {
+    margin-right: 28px;
+  }
+  color: $text-light;
+}
+
+.nav__link {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}

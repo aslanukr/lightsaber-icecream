@@ -1,0 +1,78 @@
+section.gallery {
+  padding-top: 0px;
+  // padding-bottom: 0px;
+
+  padding-bottom: calc(130px - 32px);
+
+  @media screen and (min-width: $tablet) {
+    padding-bottom: calc(327px - 144px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-bottom: calc(422px - 98px);
+  }
+}
+
+.gallery__thumb {
+  position: relative;
+  // outline: auto;
+
+  transform: translateY(-32px);
+
+  @media screen and (max-width: calc($tablet - 1px)) {
+    // height: 130px;
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $tablet) {
+    // width: 704px;
+    // height: 327px;
+    transform: translateY(-144px);
+  }
+
+  @media screen and (min-width: $desktop) {
+    // width: 1013px;
+    // height: 422px;
+    margin-left: calc(94px - 16px);
+    margin-right: calc(94px - 16px);
+    transform: translateY(-98px);
+  }
+}
+
+.gallery__img {
+  position: absolute;
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  @media screen and (min-width: $tablet) {
+    border-radius: 18px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    border-radius: $border-radius-card;
+  }
+
+  animation-name: ice-cream;
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+}
+
+//  Changing the images
+.gallery__img:nth-of-type(1) {
+  animation-delay: 12s;
+}
+.gallery__img:nth-of-type(2) {
+  animation-delay: 9s;
+}
+.gallery__img:nth-of-type(3) {
+  animation-delay: 6s;
+}
+.gallery__img:nth-of-type(4) {
+  animation-delay: 3s;
+}
+.gallery__img:nth-of-type(5) {
+  animation-delay: 0s;
+}
